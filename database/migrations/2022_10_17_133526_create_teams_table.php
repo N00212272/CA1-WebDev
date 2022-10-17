@@ -1,4 +1,5 @@
 <?php
+//THIS IS THE TEAMS MIGRATION
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

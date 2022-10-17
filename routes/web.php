@@ -21,4 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//This line create a route every function in the note resource controller
+Route::resource('/teams', NoteController::class)->middleware(['auth']);
+
 require __DIR__.'/auth.php';
