@@ -17,7 +17,12 @@ class TeamFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word,
+            'user_id' => 1,
+            'category' => $this->faker->text(30),
+            'description' => $this->faker->text(200),
+            'team_image' => "public\images\team_placeholder.jpg",
+            'sponsor' => $this->faker->name
         ];
     }
 }

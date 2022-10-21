@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TeamController extends Controller
 {
@@ -15,7 +16,7 @@ class TeamController extends Controller
     public function index()
     {
     //fetch Teams in order of when they were last update - latest updated returned first
-    $notes = Teams::where('user_id', Auth::id())->latest('updated_at')->paginate(1);
+    $teams = Team::where('user_id', Auth::id())->latest('updated_at')->paginate(10);
     //dd($teams);
     return view('teams.index')->with('teams', $teams);
     }

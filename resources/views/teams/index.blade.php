@@ -12,11 +12,11 @@
             @forelse ($teams as $team)
                 <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                 {{-- This button brings you to the teams show page if there are teams --}}
-                    <h2 class="font-bold text-2xl">
+                    {{-- <h2 class="font-bold text-2xl">
                         <a href="{{ route('teams.show', $team->uuid) }}">{{ $team->title }}</a>
-                    </h2>
+                    </h2> --}}
                     <p class="mt-2">
-                        {{ Str::limit($team->text, 200) }}
+                        {{ Str::limit($team->name, 200) }}
                     </p>
                     <span class="block mt-4 text-sm opacity-70">{{ $team->updated_at->diffForHumans() }}</span>
                 </div>
